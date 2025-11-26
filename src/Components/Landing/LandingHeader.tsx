@@ -2,6 +2,7 @@ import "../.././index.css";
 import { useState, useEffect } from "react";
 
 export default function LandingHeader() {
+
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
@@ -13,7 +14,7 @@ export default function LandingHeader() {
     }, [isOpen]);
 
     return (
-        <div className="w-full h-[15vh] flex">
+        <div className="w-full h-[10vh] flex border">
             <div className="w-full h-full flex justify-center items-center">
                 <p>EduGuide</p>
             </div>
@@ -37,7 +38,7 @@ export default function LandingHeader() {
 
             {isOpen && (
                 <div className="fixed inset-0 flex justify-center items-center bg-white bg-opacity-90">
-                    <div className="bg-white p-6 rounded-xl w-80 relative">
+                    <div className="p-6 rounded-xl w-80 relative">
 
                         <button
                             onClick={() => setIsOpen(false)}
@@ -67,7 +68,7 @@ export default function LandingHeader() {
                             >
                                 Cancel
                             </button>
-                            <button className="px-4 py-2 bg-blue-500 text-white rounded">
+                            <button className="px-4 py-2 bg-blue-500 rounded">
                                 Login
                             </button>
                         </div>
