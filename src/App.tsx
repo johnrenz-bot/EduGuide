@@ -1,6 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./index.css";
+
 import Landing from "./Pages/Landing";
+import Login from "./Pages/Login";
+import Dashboard from "./Pages/Dashboard";
+
 
 import Strand from "./Pages/Education/Strand/Strand"
 import ICT from "./Pages/Education/Strand/ICT"
@@ -16,6 +20,9 @@ export default function App() {
         <Routes>
           <Route path="/EduGuide" element={<Landing />} />
 
+
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Dashboard" element={<Dashboard />} />
 
           <Route path="/Strand" element={<Strand />} />
           <Route path="/ICT" element={<ICT />} />

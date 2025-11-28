@@ -71,7 +71,7 @@ export default function Strand() {
                 }}
                 className="w-full h-full object-cover opacity-40"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-800/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-gray-800/40 via-transparent to-transparent" />
             </div>
 
             <div className="relative z-10 h-full flex flex-col p-5 text-gray-900">
@@ -114,7 +114,7 @@ export default function Strand() {
               }}
               className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent" />
           </div>
 
           <div className="relative z-10 h-full flex flex-col p-6 text-white">
@@ -146,12 +146,12 @@ export default function Strand() {
     });
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-white to-blue-100 text-gray-900">
+    <div className="min-h-screen w-full bg-linear-to-b from-white to-blue-100 text-gray-900">
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 text-gray-700 hover:text-gray-900">
+          <Link to="/Dashboard" className="flex items-center gap-3 text-gray-700 hover:text-gray-900">
             <IoIosArrowBack size={22} />
-            <span className="font-medium">Landing Page</span>
+            <span className="font-medium">Back</span>
           </Link>
           <h1 className="text-3xl font-bold chewy-regular">Strands Explorer</h1>
           <div className="w-24" />
