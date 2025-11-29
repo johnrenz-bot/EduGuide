@@ -1,7 +1,11 @@
 import { IoIosArrowBack } from "react-icons/io";
-import { Link } from "react-router-dom";
-
+import { Link, useLocation } from "react-router-dom";
+import DashboardHeader from "../../Dashboard/DashboardHeader";
+  
 export default function ABM() {
+    const location = useLocation();
+  const guest = (location.state as { user?: any } | undefined)?.user ?? null;
+  
   const Grade11Modules = [
     {
       title: "Foundations of Accountancy & Business",
@@ -184,6 +188,8 @@ export default function ABM() {
 
   return (
     <div className="min-h-screen bg-linear-to-b from-white to-yellow-50 text-gray-900">
+        <DashboardHeader guest={guest} />
+
       <div className="max-w-6xl mx-auto px-6 py-10">
         <div className="flex items-center gap-4 mb-6">
           <Link to="/Strand" className="flex items-center gap-2 text-gray-700 hover:text-gray-900">
@@ -279,7 +285,6 @@ export default function ABM() {
                 <h3 className="text-lg font-semibold text-gray-900">Quick Info</h3>
                 <p className="mt-2 text-sm text-gray-700">Track: ABM • Duration: 2 years • Mode: On-site / Blended</p>
                 <div className="mt-4 grid grid-cols-2 gap-2">
-                  <a className="px-3 py-2 rounded-lg bg-yellow-600 text-white text-sm text-center hover:bg-yellow-700" href="#enroll">Enroll</a>
                   <a className="px-3 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 text-center hover:bg-gray-50" href="#contact">Contact</a>
                 </div>
               </div>

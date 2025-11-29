@@ -1,22 +1,26 @@
 import { IoIosArrowBack } from "react-icons/io";
 import { IoLockClosed } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import DashboardHeader from "../../Dashboard/DashboardHeader";
 
 export default function Strand() {
+  const location = useLocation();
+  const guest = (location.state as { user?: any } | undefined)?.user ?? null;
+
   const AcademicStrands: string[] = ["STEM", "ABM", "GAS"];
   const OtherStrands: string[] = [
     "ICT",
     "Home Economics",
     "Agri-Fishery Arts",
     "Arts & Design",
-    "Sports",
+    "Sports"
   ];
 
   const AcademicStrandsImage: string[] = [
     "/Image/Strands/AcademicStrands/stem.jpg",
     "/Image/Strands/AcademicStrands/abm.jpg",
-    "/Image/Strands/AcademicStrands/gas.jpg",
+    "/Image/Strands/AcademicStrands/gas.jpg"
   ];
 
   const OtherStrandsImage: string[] = [
@@ -24,7 +28,7 @@ export default function Strand() {
     "/Image/Strands/OtherStrands/home-economics.jpg",
     "/Image/Strands/OtherStrands/agri-fishery.jpg",
     "/Image/Strands/OtherStrands/arts-design.jpg",
-    "/Image/Strands/OtherStrands/sports.jpg",
+    "/Image/Strands/OtherStrands/sports.jpg"
   ];
 
   const [open, setOpen] = useState<number | null>(null);
@@ -32,16 +36,16 @@ export default function Strand() {
   const items = [
     {
       q: "What is the difference between Academic and Technical-Vocational strands?",
-      a: "Academic strands prepare students for college, while Technical-Vocational strands equip students with practical skills for employment or entrepreneurship.",
+      a: "Academic strands prepare students for college, while Technical-Vocational strands equip students with practical skills for employment or entrepreneurship."
     },
     {
       q: "Can I switch strands in SHS?",
-      a: "Switching strands is allowed at the start of the school year, depending on school policies and available slots.",
+      a: "Switching strands is allowed at the start of the school year, depending on school policies and available slots."
     },
     {
       q: "How do I choose the right strand for me?",
-      a: "Consider your interests, strengths, and future career goals. A guidance counselor can help you determine the best fit.",
-    },
+      a: "Consider your interests, strengths, and future career goals. A guidance counselor can help you determine the best fit."
+    }
   ];
 
   const sanitizePath = (name: string) =>
@@ -129,13 +133,11 @@ export default function Strand() {
               <Link
                 to={path}
                 className="flex-1 text-center py-3 rounded-lg bg-blue-600 hover:bg-blue-700 transition font-semibold"
-                aria-label={`View details for ${item}`}
               >
                 View Details
               </Link>
               <button
                 className="w-12 rounded-lg bg-white/30 flex items-center justify-center hover:bg-white/40 transition text-yellow-300"
-                aria-label="Favorite strand"
               >
                 ★
               </button>
@@ -147,6 +149,8 @@ export default function Strand() {
 
   return (
     <div className="min-h-screen w-full bg-linear-to-b from-white to-blue-100 text-gray-900">
+      <DashboardHeader guest={guest} />
+
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex items-center justify-between">
           <Link to="/Dashboard" className="flex items-center gap-3 text-gray-700 hover:text-gray-900">
@@ -189,7 +193,6 @@ export default function Strand() {
                   <button
                     onClick={() => setOpen(open === i ? null : i)}
                     className="w-full text-left px-4 py-3 flex items-center justify-between gap-3"
-                    aria-expanded={open === i}
                   >
                     <span className="font-medium">{it.q}</span>
                     <span className="text-2xl">{open === i ? "−" : "+"}</span>
