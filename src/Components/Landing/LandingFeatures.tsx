@@ -34,7 +34,7 @@ export default function LandingFeatures() {
     ];
 
     return (
-        <div className="w-full min-h-screen text-black/80 bg-linear-to-t from-blue-100 to-white/30 flex flex-col items-center py-10">
+        <div className="w-full h-screen text-black/80 bg-linear-to-t from-blue-100 to-white/30 flex flex-col items-center justify-center py-10">
             <h1 className="text-4xl font-bold chewy-regular mb-14 drop-shadow-lg">
                 Explore EduGuide Features
             </h1>

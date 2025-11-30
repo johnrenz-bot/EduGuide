@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useState } from "react";
 
 interface Slide {
     img: string;
@@ -15,37 +15,25 @@ export default function LandingCarousel() {
         { img: './Image/Univesity/Nu.jpg', name: 'National University', url: 'https://www.national-u.edu.ph/' },
     ];
 
-    const containerRef = useRef<HTMLDivElement>(null);
-    const speed = 0.2;
-
-    useEffect(() => {
-        let position = 0;
-        const animate = () => {
-            position -= speed;
-            const container = containerRef.current;
-            if (container) {
-                const totalWidth = container.scrollWidth / 2;
-                if (Math.abs(position) >= totalWidth) position = 0;
-                container.style.transform = `translateX(${position}px)`;
-            }
-            requestAnimationFrame(animate);
-        };
-        animate();
-    }, [speed]);
+    const [paused, setPaused] = useState(false);
 
     return (
-        <main className="w-full h-[50%] bg-gray-100 flex flex-col py-6">
-            {/* Title */}
-            <div className="w-full flex justify-center mb-6">
+        <main className="w-full h-full bg-linear-to-b from-blue-100 via-purple-100 to-pink-100 flex flex-col py-10">
+            <div className="w-full flex justify-center mb-8">
                 <p className="text-black text-5xl font-serif hover:text-blue-600 transition-colors duration-300 cursor-pointer text-center">
                     Explore All Universities
                 </p>
             </div>
 
-            {/* Carousel */}
-            <div className="w-full h-[25vh] overflow-hidden flex items-center">
-                <div ref={containerRef} className="flex gap-6">
-                    {slides.concat(slides).map((slide, idx) => (
+            <div 
+                className="w-full h-[25vh] overflow-hidden relative"
+                onMouseEnter={() => setPaused(true)}
+                onMouseLeave={() => setPaused(false)}
+            >
+                <div
+                    className={`flex gap-6 whitespace-nowrap absolute top-0 left-0 animate-scroll ${paused ? "pause-animation" : ""}`}
+                >
+                    {slides.map((slide, idx) => (
                         <a
                             key={idx}
                             href={slide.url}
@@ -58,9 +46,25 @@ export default function LandingCarousel() {
                                 alt={slide.name}
                                 className="w-full h-full object-cover"
                             />
-                            <div className="absolute bottom-0 left-0 w-full bg-black/40 bg-opacity-50 text-white py-2 px-4 text-center text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="absolute bottom-0 left-0 w-full bg-black/40 text-white py-2 px-4 text-center text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 {slide.name}
                             </div>
+                        </a>
+                    ))}
+
+                    {slides.map((slide, idx) => (
+                        <a
+                            key={`clone-${idx}`}
+                            href={slide.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative flex-none w-[55vh] h-[25vh] rounded-2xl overflow-hidden shadow-lg"
+                        >
+                            <img
+                                src={slide.img}
+                                alt={slide.name}
+                                className="w-full h-full object-cover opacity-50"
+                            />
                         </a>
                     ))}
                 </div>

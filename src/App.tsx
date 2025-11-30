@@ -3,7 +3,7 @@ import "./index.css";
 
 import Landing from "./Pages/Landing";
 import Login from "./Pages/Login";
-
+import CreateAccount from "./Pages/CreateAccount";
 
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import DashboardAbout from "./Pages/Dashboard/DashboardAbout";
@@ -33,6 +33,8 @@ export default function App() {
 
 
           <Route path="/Login" element={<Login />} />
+          <Route path="/CreateAccount" element={<CreateAccount />} />
+
           <Route path="/Dashboard" element={<Dashboard />} />
           <Route path="/Dashboard/About" element={<DashboardAbout />} />
           <Route path="/Dashboard/Services" element={<DashboardServices />} />

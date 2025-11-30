@@ -72,7 +72,7 @@ export default function DashboardMain({ guest }: { guest: Guest | null }) {
               return (
                 <div
                   key={i}
-                  className={`${cardClasses} bg-black/40 backdrop-blur-md cursor-not-allowed border border-white/10 opacity-90 text-white`}
+                  className={`${cardClasses} bg-black/40 backdrop-blur-md cursor-not-allowed border border-black opacity-90 text-black`}
                 >
                   <div className="absolute inset-0 bg-black/40 rounded-3xl" />
 
@@ -99,11 +99,11 @@ export default function DashboardMain({ guest }: { guest: Guest | null }) {
               <Link
                 to={f.link!}
                 key={i}
-                className={`${cardClasses} bg-white/10 backdrop-blur-xl border border-white/30 hover:scale-105 hover:border-white/50`}
+                className={`${cardClasses} bg-white/10 backdrop-blur-xl border border-white/30 hover:scale-105 hover:border-black`}
               >
                 <div className="mt-4">{f.icon}</div>
                 <div className="text-xl font-bold text-center">{f.title}</div>
-                <div className="w-full py-3 bg-white/20 border border-white/40 rounded-xl text-center text-lg font-semibold hover:bg-white/40 hover:text-gray-900 active:scale-95">
+                <div className="w-full py-3 bg-white/20 border border-black rounded-xl text-center text-lg font-semibold hover:bg-gray-500 hover:border-2 hover:scale-105 hover:text-white active:scale-95">
                   {f.label}
                 </div>
               </Link>
