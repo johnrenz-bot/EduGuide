@@ -1,4 +1,3 @@
-import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
 import DashboardHeader from "../../Dashboard/DashboardHeader";
