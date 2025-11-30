@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./index.css";
 
 import Landing from "./Pages/Landing";
@@ -10,19 +10,16 @@ import DashboardAbout from "./Pages/Dashboard/DashboardAbout";
 import DashboardServices from "./Pages/Dashboard/DashboardServices";
 import DashboardContact from "./Pages/Dashboard/DashboardContact";
 
-
-import Strand from "./Pages/Education/Strand/Strand"
-import ICT from "./Pages/Education/Strand/ICT"
-import STEM from "./Pages/Education/Strand/STEM"
-import ABM from "./Pages/Education/Strand/ABM"
-import GAS from "./Pages/Education/Strand/GAS"
-
+import Strand from "./Pages/Education/Strand/Strand";
+import ICT from "./Pages/Education/Strand/ICT";
+import STEM from "./Pages/Education/Strand/STEM";
+import ABM from "./Pages/Education/Strand/ABM";
+import GAS from "./Pages/Education/Strand/GAS";
 
 import Course from "./Pages/Education/Course/Course";
 import Technologies from "./Pages/Education/Course/Technologies";
 import Business from "./Pages/Education/Course/Business";
 import Engineering from "./Pages/Education/Course/Engineering";
-
 
 export default function App() {
   return (
@@ -30,7 +27,6 @@ export default function App() {
       <Router>
         <Routes>
           <Route path="/EduGuide" element={<Landing />} />
-
 
           <Route path="/Login" element={<Login />} />
           <Route path="/CreateAccount" element={<CreateAccount />} />
@@ -51,11 +47,9 @@ export default function App() {
           <Route path="/Business" element={<Business />} />
           <Route path="/Engineering" element={<Engineering />} />
 
-
           <Route path="/*" element={<Navigate to="/EduGuide" replace />} />
         </Routes>
       </Router>
-
     </div>
   );
 }

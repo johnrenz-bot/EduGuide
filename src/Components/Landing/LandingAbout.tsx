@@ -25,12 +25,12 @@ export default function LandingAbout() {
         />
       ))}
 
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-700/20 via-purple-600/10 to-cyan-500/20 blur-3xl" />
+      <div className="absolute inset-0 bg-linear-to-br from-blue-700/20 via-purple-600/10 to-cyan-500/20 blur-3xl" />
 
       <div className="relative w-[90%] max-w-6xl flex flex-col md:flex-row gap-16 items-center z-10">
 
         <div className="relative group w-full md:w-1/2 h-80 md:h-[85vh] rounded-3xl overflow-hidden shadow-2xl border border-white/10 backdrop-blur-xl">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 to-purple-500/40 opacity-40 group-hover:opacity-60 transition-all duration-500 blur-2xl" />
+          <div className="absolute inset-0 bg-linear-to-br from-blue-500/40 to-purple-500/40 opacity-40 group-hover:opacity-60 transition-all duration-500 blur-2xl" />
           <img
             src="./Image/Landing/check.png"
             alt="EduGuide Illustration"
@@ -55,7 +55,7 @@ export default function LandingAbout() {
             </p>
           ))}
 
-          <button className="mt-6 px-6 py-3 w-fit bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg backdrop-blur-xl shadow-lg hover:shadow-blue-500/40 hover:scale-[1.03] transition-all duration-300">
+          <button className="mt-6 px-6 py-3 w-fit bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg backdrop-blur-xl shadow-lg hover:shadow-blue-500/40 hover:scale-[1.03] transition-all duration-300">
             Explore EduGuide →
           </button>
         </div>
